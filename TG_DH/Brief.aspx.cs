@@ -62,7 +62,7 @@ namespace DNP
 
                         if (!string.IsNullOrEmpty(Path.GetFileName(fuIImagen.FileName)))
                         {
-                            if (Convert.ToInt32(fuIImagen.PostedFile.ContentLength) > 1048576) lblimagen.Text = "Error, el tamaño de la foto debe ser menor a un MB";
+                            if (Convert.ToInt32(fuIImagen.PostedFile.ContentLength) > 1048576) lblimagen.Text = "Error, el tamaño de la foto debe ser menor a un MB  ";
                             else
                             {
                                 fuIImagen.SaveAs(Server.MapPath("Files/Brief") + "/" + lblProyectoCotiza.Text + "Brief.jpg");
