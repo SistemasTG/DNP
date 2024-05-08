@@ -186,7 +186,7 @@ namespace DNP
             if (tipoMaquila == null || dpSolicitaCoti.Text == "" || txtprodCoti.Text == "" || txtcajasCoti.Text == "" || DropTP.Text == "" || DropTP.Text == "SELECCIONE")
             {
 
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('Favor de llenar todos los datos.');</script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('Favor de llenar toda la información.');</script>");
             }
             else
             {
