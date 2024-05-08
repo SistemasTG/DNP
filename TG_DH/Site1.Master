@@ -1,0 +1,97 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="DNP.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="Css/Style.css" type="text/css" media="screen"/>
+    <style type="text/css">
+        .auto-style1 {
+            width: 248px;
+        }
+        .auto-style2 {
+            width: 890px;
+        }
+        .auto-style3 {
+            width: 252px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">              
+            <table>
+                <tr>
+                    <td colspan="4">
+                        <img alt="bar" class="barra" src="Imagenes/barners.jpg"/></td>
+                </tr>
+                <tr>
+                    <td class="auto-style3">
+                        <img alt="LOG" class="logo" src="Imagenes/logo.jpg"  /> </td>
+                    <td class="auto-style2">
+                        <center>
+                            <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" StaticEnableDefaultPopOutImage="False" DynamicEnableDefaultPopOutImage="False" Width="630px" MaximumDynamicDisplayLevels="10" OnMenuItemClick="Menu1_MenuItemClick1">
+                                <Items>
+                                    <asp:MenuItem ImageUrl="~/Imagenes/house.png" NavigateUrl="Principal.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="LANZAMIENTOS" Value="LANZAMIENTOS">
+                                        <asp:MenuItem Text="FORMULARIO LANZAMIENTOS" Value="FORMULARIO LANZAMIENTOS" NavigateUrl="Lanzamientos.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="REPORTE LANZAMIENTO" Value="REPORTE LANZAMIENTO" NavigateUrl="Lanz_Reporte.aspx"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Text="COTIZACIONES" Value="COTIZACIONES" NavigateUrl="Cotizaciones.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="BRIEF" Value="BRIEF">
+                                        <asp:MenuItem Text="FORMULARIO BRIEF" Value="FORMULARIO BRIEF" NavigateUrl="Brief.aspx"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                </Items>
+                                <LevelMenuItemStyles>
+                                    <asp:MenuItemStyle CssClass="level1" />
+                                    <asp:MenuItemStyle CssClass="level2" />
+                                    <asp:MenuItemStyle CssClass="level2" />
+                                    <asp:MenuItemStyle CssClass="level2" />
+                                    <asp:MenuItemStyle CssClass="level2" />
+                                    <asp:MenuItemStyle CssClass="level2" />
+                                    <asp:MenuItemStyle CssClass="level2" />
+                                    <asp:MenuItemStyle CssClass="level2" />
+                                    <asp:MenuItemStyle CssClass="level2" />
+                                    <asp:MenuItemStyle CssClass="level2" />
+                                </LevelMenuItemStyles>
+                                <StaticMenuItemStyle Height="25px" />
+                            </asp:Menu>
+                        </center>
+                    </td>
+                    <td class="auto-style1">
+                        <asp:Menu ID="Menu2" runat="server" Orientation="Horizontal" StaticEnableDefaultPopOutImage="False" DynamicEnableDefaultPopOutImage="False" Width="250px" MaximumDynamicDisplayLevels="10" OnMenuItemClick="Menu2_MenuItemClick">
+                            <DynamicItemTemplate>
+                                <%# Eval("Text") %>
+                            </DynamicItemTemplate>
+                            <Items>
+                                <asp:MenuItem></asp:MenuItem>
+                                <asp:MenuItem Text="SALIR" Value="SALIR"></asp:MenuItem>
+                            </Items>
+                            <LevelMenuItemStyles>
+                                <asp:MenuItemStyle CssClass="level11" />
+                            </LevelMenuItemStyles>
+                            <StaticMenuItemStyle Height="25px" />
+                        </asp:Menu>
+                    </td>
+                    <td>
+                        <img src="images/dnpmenu.png" class="desa" /> </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+            </table>
+            
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

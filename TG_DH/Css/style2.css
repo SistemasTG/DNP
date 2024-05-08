@@ -1,0 +1,131 @@
+﻿body {
+}
+
+table {
+}
+
+.barra {
+    width: 100%;
+    height:70px;
+}
+
+.logo {
+    width: 190px;
+}
+
+.desa {
+    width: 180px;
+    float:right;
+}
+
+.level1 {
+    text-align: left;
+    font: 400 12px "Open Sans",Arial,Helvetica,sans-serif;
+    font-weight: bold;
+    color: #444;
+    display:block;
+    cursor:pointer;
+    margin-right:70px;
+    padding-top:7px;
+    padding-bottom:7px;
+    background-color:white;
+    position:relative;
+     z-index: 3;
+}
+
+.level1:hover {
+    color: #00A8FF;
+}
+
+.level2 {
+    text-align: center;
+    font: 400 12px "Open Sans",Arial,Helvetica,sans-serif;
+    font-weight: bold;
+    color: #444;
+    background-color: white;
+    border-style: solid;
+    border-color: #EEE;
+    border-width: 1px;
+    display:block;
+    padding-top:7px;
+    padding-bottom:7px;
+    padding-right:20px;
+    padding-left:20px;
+     z-index: 3;
+}
+
+.level2:hover {
+        background-color: #041a6c;
+        color: white;
+        transition: background-color 1s linear;
+        -webkit-transition: background-color 1s linear; /* Chrome y Safari */
+        -o-transition: background-color 1s linear; /* Opera */
+        -moz-transition: background-color 1s linear; /* Mozilla Firefox */
+        -ms-transition: background-color 1s linear; /* Internet Explorer */
+}
+
+.level3 {
+    text-align: center;
+    font: 400 12px "Open Sans",Arial,Helvetica,sans-serif;
+    font-weight: bold;
+    color: #444;
+    background-color: white;
+    border-style: solid;
+    border-color: #EEE;
+    border-width: 1px;
+    display:block;
+    padding-top:7px;
+    padding-bottom:7px;
+    padding-right:20px;
+    padding-left:20px;
+}
+
+.level3:hover {
+        background-color: #041a6c;
+        color: white;
+        transition: background-color 1s linear;
+        -webkit-transition: background-color 1s linear; /* Chrome y Safari */
+        -o-transition: background-color 1s linear; /* Opera */
+        -moz-transition: background-color 1s linear; /* Mozilla Firefox */
+        -ms-transition: background-color 1s linear; /* Internet Explorer */
+}
+
+.prueba{
+    background-color:gray;
+}
+
+.level11 {
+    text-align: right;
+    font: 400 12px "Open Sans",Arial,Helvetica,sans-serif;
+    font-weight: bold;
+    color: #444;
+    display:block;
+    cursor:pointer;
+    margin-right:70px;
+    padding-top:7px;
+    padding-bottom:7px;
+    background-color:white;
+}
+
+.level11:hover {
+    color: #00A8FF;
+}
+
+#menunuevo ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+
+}
+
+#menunuevo #itemnuevo {
+    float: left;
+}
+
+#menunuevo #itemnuevo a {
+        background: rgba(0,51,102,1);
+        color: rgba(255,255,255,1);
+        padding: 12px 22px;
+        display: block;
+        font-family: Arial, Helvetica, sans-serif;
+    }

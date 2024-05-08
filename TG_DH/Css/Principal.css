@@ -1,0 +1,288 @@
+﻿
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+.div1{
+
+}
+
+#slidebox {
+    position:relative;
+    margin: 4px auto;
+    overflow: hidden;
+    border-radius:1%;
+}
+
+    #slidebox, #slidebox ul {
+        width: 100%;
+        height:430px;
+    }
+
+        #slidebox, #slidebox ul li {
+            width:100%;
+            height: 430px;
+        }
+
+            #slidebox ul li {
+                position: relative;
+                left: 0;
+                float: left;
+                list-style: none;
+                font-family: Verdana, Geneva, sans-serif;
+                font-size: 13px;
+            }
+
+            #slidebox .next, #slidebox .previous {
+                position: absolute;
+                z-index: 2;
+                display: block;
+                width: 30px;
+                height: 30px;
+                top: 180px;
+            }
+
+            #slidebox .next {
+                right: 0;
+                margin-right: 10px;
+                background: url(../Imagenes/principal/slidebox_next.png) no-repeat left top;
+            }
+
+                #slidebox .next:hover {
+                    background: url(../Imagenes/principal/slidebox_next_hover.png) no-repeat left top;
+                }
+
+            #slidebox .previous {
+                margin-left: 10px;
+                background: url(../Imagenes/principal/slidebox_previous.png) no-repeat left top;
+            }
+
+                #slidebox .previous:hover {
+                    background: url(../Imagenes/principal/slidebox_previous_hover.png) no-repeat left top;
+                }
+
+            #slidebox .thumbs {
+                position: absolute;
+                z-index: 2;
+                bottom: 10px;
+                right: 10px;
+            }
+
+                #slidebox .thumbs a {
+                    display: block;
+                    margin-left: 5px;
+                    float: left;
+                    font-family: Verdana, Geneva, sans-serif;
+                    font-size: 9px;
+                    text-decoration: none;
+                    padding: 2px 4px;
+                    background: url(Imagenes/principal/slidebox_thumb.png);
+                    color: #fff;
+                }
+
+                    #slidebox .thumbs a:hover {
+                        background: #fff;
+                        color: #000;
+                    }
+
+                #slidebox .thumbs .thumbActive {
+                    background: #fff;
+                    color: #000;
+                    display: block;
+                    margin-left: 5px;
+                    float: left;
+                    font-family: Verdana, Geneva, sans-serif;
+                    font-size: 9px;
+                    text-decoration: none;
+                    padding: 2px 4px;
+                }
+
+/*Codigo para pie de pagina*/
+  section{
+                width:100%;
+                margin:0 auto;
+            }
+
+            /*Para que el contenedor muestre elementos aunque estos sean flotantes*/
+            #container:after {
+                content: " ";
+                display: block;
+                height: 0;
+                clear: both;
+            }
+
+            #container{
+                width: 90%;
+                margin:40px auto;
+            }
+
+            /*Estructura de cada componente de la galeria (imagen + descripcion)*/
+            #container div{
+                position: relative;
+                width: 28%;
+                height: auto;
+                -webkit-transform:rotate(-8deg);
+                display:inline;
+                float:left;
+                margin:5px 3% 5px 0;
+                z-index:1;
+                transition: width 1s, width 1s, top 1s;
+                -webkit-transition: -webkit-transform 1s, width 1s, top 1s;
+            }
+
+            /*Se rota ligeramente al posicionarnos encima del componente de la galeria (imagen + descripcion)*/
+
+
+            #container div:hover{
+                -webkit-animation: rotate-img 1s;
+                -o-animation: rotate-img 1s;
+                -moz-animation: rotate-img 1s;
+                -ms-animation: rotate-img 1s;
+                animation: rotate-img 1s;
+                -webkit-transform:rotate(0deg);
+            }
+
+            #container div.select{
+                -webkit-transform:rotate(0deg);
+                position: fixed;	
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left:0;
+                z-index:5;
+                background:rgba(0,0,0,0.5);
+                margin:0;
+            }
+
+            #container div.select img{
+                width: 56%;
+                height: auto;
+                box-shadow: 0 0 20px #DDD;
+                border: 5px solid #FFF;
+                position: fixed;	
+                top: 20%;
+                left:20%;
+            }
+
+            #container div.select + div{
+                margin: 5px 3% 5px 31%;
+            }
+
+            #container div img{
+                width: 100%;
+                height: auto;
+                box-shadow: 0 0 10px #666;
+                border: 5px solid #FFF
+            }
+
+            /*Estructura de la descripcion, por defecto no se muestra*/
+            #container div img ~ span{
+                width: auto;
+                opacity:0;
+                -webkit-transition: opacity 1s;
+                margin:0;
+                padding:5px 10px;
+                border-radius: 2px;
+                color:#000;
+                background:rgb(255, 255, 255);
+                text-align:center;
+                position: fixed;	
+                top: 20%;
+                left:20%;
+                              
+            }
+
+            /*Se muestra la descripcion al posicionar el cursor encima de la imagen*/
+            #container div.select img + span{
+                opacity:1;
+            }
+
+            /*Media query de ejemplo para pantallas de alta resolucion
+              pero pueden haber mas, este media query permite mostrar hasta 5 imagenes por filas
+            */
+            @media (min-width:1600px){
+                #container div{
+                    width: 15%;
+                }
+
+                #container div.select + div{
+                    margin: 5px 3% 5px 15%;
+                }
+
+            }
+
+            @keyframes rotate-img
+            {
+                0%   {transform:rotate(10deg);}
+            20%  {transform:rotate(-10deg);}
+            40%   {transform:rotate(12deg);}
+            60%  {transform:rotate(-12deg);}
+            80%   {transform:rotate(8deg);}
+            90%  {transform:rotate(-8deg);}
+            100%  {transform:rotate(0deg);}
+            }
+
+            @-moz-keyframes rotate-img
+            {
+                0%   {-moz-transform:rotate(10deg);}
+            20%  {-moz-transform:rotate(-10deg);}
+            40%   {-moz-transform:rotate(12deg);}
+            60%  {-moz-transform:rotate(-12deg);}
+            80%   {-moz-transform:rotate(8deg);}
+            90%  {-moz-transform:rotate(-8deg);}
+            100%  {-moz-transform:rotate(0deg);}
+            }
+
+            @-webkit-keyframes rotate-img
+            {
+                0%   {-webkit-transform:rotate(4deg);}
+            20%  {-webkit-transform:rotate(-4deg);}
+            40%   {-webkit-transform:rotate(3deg);}
+            60%  {-webkit-transform:rotate(-3deg);}
+            80%   {-webkit-transform:rotate(2deg);}
+            90%  {-webkit-transform:rotate(-2deg);}
+            100%  {-webkit-transform:rotate(0deg);}
+            }
+
+            p{
+                font-size:larger;
+                font-weight:bold;
+                font-family:Arial;
+                color:#444;
+                text-align:center;
+                vertical-align:top;
+            }
+
+            
+.image {
+position: relative;
+width: 100%; /* for IE 6 */
+}
+
+h2 {
+position: absolute;
+top: 231px;
+left: 0;
+width: 100%;
+color: white;
+font: bold 24px/45px Helvetica, Sans-Serif;
+letter-spacing: -1px;
+background: rgb(0, 0, 0);
+background: rgba(0, 0, 0, 0.7);
+padding: 10px;
+}
+
+h3 {
+position: absolute;
+top: 300px;
+left: 0;
+width: 100%;
+color: white;
+font:  16px/35px Helvetica, Sans-Serif;
+letter-spacing: -1px;
+background: rgb(0, 0, 0);
+background: rgba(0, 0, 0, 0.7);
+padding: 10px;
+}
